@@ -1,88 +1,40 @@
 package com.bandtec.techconnective.model;
 
-import java.util.Calendar;
+import java.time.LocalDate;
+import java.util.List;
 
-import org.springframework.format.annotation.DateTimeFormat;
+import javax.persistence.Id;
 
+import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+
+@Document("User")
+@AllArgsConstructor
 public class Usuario {
-	private String nome;
-	private String cpf;
-	private String cnpj;
-	private int idade;
-	private Endereco endereco;
-	private String perfil;
+	@Id
+	@Getter private Integer id;
 
-	@DateTimeFormat(pattern = "dd/MM/yyyy")
-	private Calendar dataNascimento;
+	@Indexed(name = "infos")
+	@Getter private String nome;
+	@Getter @Setter private String email;
+	@Getter @Setter private String login;
+	@Getter @Setter private String senha;
+	@Getter private String cpf;
 
-	public Usuario() {
-		this("", "", "", 0, null, null, null);
-	}
+	@JsonFormat(pattern = "dd-MM-yyyy")
+	@Getter private LocalDate dt_nasc;
 
-	public Usuario(String nome, String cpf, String cnpj, int idade, Endereco endereco, String perfil,
-			Calendar dataNascimento) {
-		this.nome = nome;
-		this.cpf = cpf;
-		this.cnpj = cnpj;
-		this.idade = idade;
-		this.endereco = endereco;
-		this.perfil = perfil;
-		this.dataNascimento = dataNascimento;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public String getCpf() {
-		return cpf;
-	}
-
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
-	}
-
-	public String getCnpj() {
-		return cnpj;
-	}
-
-	public void setCnpj(String cnpj) {
-		this.cnpj = cnpj;
-	}
-
-	public String getPerfil() {
-		return perfil;
-	}
-
-	public void setPerfil(String perfil) {
-		this.perfil = perfil;
-	}
-
-	public int getIdade() {
-		return idade;
-	}
-
-	public void setIdade(int idade) {
-		this.idade = idade;
-	}
-
-	public Endereco getEndereco() {
-		return endereco;
-	}
-
-	public void setEndereco(Endereco endereco) {
-		this.endereco = endereco;
-	}
-
-	public Calendar getDataNascimento() {
-		return dataNascimento;
-	}
-
-	public void setDataNascimento(Calendar dataNascimento) {
-		this.dataNascimento = dataNascimento;
-	}
+	@Getter @Setter private String cep;
+	@Getter @Setter private Integer tel;
+	@Getter @Setter private Integer cel;
+	@Getter @Setter private int prefix;
+	
+	@Getter @Setter private List usuarioComum;
+	
 }

@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class TechconnectiveApplication {
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(TechconnectiveApplication.class, args);
 	}
 
