@@ -10,15 +10,14 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
-@Document("User")
-@AllArgsConstructor
+@Document(collection = "colUser")
+
 public class Usuario {
 	@Id
-	@Getter private Integer id;
+	private Integer id;
 
 	@Indexed(name = "infos")
 	@Getter private String nome;
@@ -27,14 +26,16 @@ public class Usuario {
 	@Getter @Setter private String senha;
 	@Getter private String cpf;
 
-	@JsonFormat(pattern = "dd-MM-yyyy")
+	@JsonFormat(pattern = "dd/MM/yyyy")
 	@Getter private LocalDate dt_nasc;
-
+	
 	@Getter @Setter private String cep;
 	@Getter @Setter private Integer tel;
 	@Getter @Setter private Integer cel;
 	@Getter @Setter private int prefix;
+	@Getter private char sexo;
 	
 	@Getter @Setter private List usuarioComum;
+	
 	
 }
