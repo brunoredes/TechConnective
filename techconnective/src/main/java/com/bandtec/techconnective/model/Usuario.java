@@ -28,12 +28,16 @@ public class Usuario {
 
 	@JsonFormat(pattern = "dd/MM/yyyy")
 	@Getter private LocalDate dt_nasc;
-	
-	@Getter @Setter private String cep;
+	@Getter private String cep;
+	@Getter @Setter private String logradouro;
+	@Getter @Setter private String bairro;
+	@Getter private String cidade;
+	@Getter private String uf;
 	@Getter @Setter private Integer tel;
 	@Getter @Setter private Integer cel;
 	@Getter @Setter private int prefix;
 	@Getter private char sexo;
+	@Getter private String role = "admin";
 	
 	@Getter @Setter private List usuarioComum;
 	

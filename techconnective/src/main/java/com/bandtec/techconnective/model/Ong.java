@@ -24,7 +24,7 @@ public class Ong {
 	@Getter @Setter private List ong;
 	
 	public Ong() {
-		
+
 	}
 	
 	public Ong(String nome, String email, String senha, String cnpj) {
