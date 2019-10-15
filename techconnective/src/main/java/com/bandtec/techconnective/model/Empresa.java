@@ -1,7 +1,5 @@
 package com.bandtec.techconnective.model;
 
-import java.util.List;
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -20,7 +18,7 @@ public class Empresa {
 	@Getter private String cnpj;
 
 	
-	@Getter @Setter private List empresa;
+	//@Getter @Setter private List empresa;
 	
 	public Empresa(){
 		

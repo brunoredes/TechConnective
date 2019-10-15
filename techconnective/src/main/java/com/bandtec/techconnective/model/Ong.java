@@ -6,11 +6,13 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Document("Ong")
-
+@Document("colOng")
+@AllArgsConstructor @NoArgsConstructor
 public class Ong {
 	@Id 
 	private int id;
@@ -23,14 +25,5 @@ public class Ong {
 	
 	@Getter @Setter private List ong;
 	
-	public Ong() {
 
-	}
-	
-	public Ong(String nome, String email, String senha, String cnpj) {
-		this.nome = nome;
-		this.email = email;
-		this.senha = senha;
-		this.cnpj = cnpj;
-	}
 }

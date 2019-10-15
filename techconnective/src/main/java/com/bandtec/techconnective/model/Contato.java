@@ -7,7 +7,7 @@ import lombok.Setter;
 
 @NoArgsConstructor @AllArgsConstructor
 public class Contato {
-	@Getter @Setter private int prefixo;
-	@Getter @Setter private Integer tel;
-	@Getter @Setter private Integer cel;
+	@Getter @Setter private byte prefixo;
+	@Getter @Setter private long tel;
+	@Getter @Setter private long cel;
 }
