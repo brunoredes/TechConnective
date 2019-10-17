@@ -19,7 +19,7 @@ public class Usuario {
 	private LocalDate dt_nasc;
 	// @Getter private String sobrenome;
 	private Sex sex;
-	private String senha;
+	private Credenciais credenciais;
 	private Endereco endereco;
 	private Contato contato;
 	private String email;
@@ -28,13 +28,13 @@ public class Usuario {
 
 	}
 
-	public Usuario(String nome, String cpf, LocalDate dt_nasc, Sex sex, String senha, Endereco endereco,
+	public Usuario(String nome, String cpf, LocalDate dt_nasc, Sex sex, Credenciais credenciais, Endereco endereco,
 			Contato contato, String email) {
 		this.nome = nome;
 		this.cpf = cpf;
 		this.dt_nasc = dt_nasc;
 		this.sex = sex;
-		this.senha = senha;
+		this.credenciais = credenciais;
 		this.endereco = endereco;
 		this.contato = contato;
 		this.email = email;
@@ -76,12 +76,12 @@ public class Usuario {
 		this.sex = sex;
 	}
 
-	public String getSenha() {
-		return senha;
+	public Credenciais getCredenciais() {
+		return credenciais;
 	}
 
-	public void setSenha(String senha) {
-		this.senha = senha;
+	public void setCredenciais(Credenciais credenciais) {
+		this.credenciais = credenciais;
 	}
 
 	public Endereco getEndereco() {

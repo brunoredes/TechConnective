@@ -1,17 +1,15 @@
 package com.bandtec.techconnective.dao;
 
-import java.util.List;
-
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import com.bandtec.techconnective.model.Credenciais;
 import com.bandtec.techconnective.model.Usuario;
 
 @Repository
-public interface UsuarioRepository extends MongoRepository<Usuario, String>{
+public interface LoginRepository extends MongoRepository<Usuario, String>{
 	
-	@Query("{'nome' : ?0}")
-	public List<Usuario> porNome(String nome);
-
+	@Query("{ 'credenciais' : ?0}")
+	public Usuario loginUsuario(Credenciais c);
 }

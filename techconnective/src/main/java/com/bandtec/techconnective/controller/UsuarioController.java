@@ -39,4 +39,6 @@ public class UsuarioController {
 		usuarioRepository.save(usuario);
 		return ResponseEntity.ok("Sucesso");
 	}
+	
+	
 }
