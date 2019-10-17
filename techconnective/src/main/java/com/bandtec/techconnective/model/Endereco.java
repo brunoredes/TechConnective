@@ -1,28 +1,99 @@
 package com.bandtec.techconnective.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
-@NoArgsConstructor
-@AllArgsConstructor
 public class Endereco {
-	@Getter
+
 	private long cep;
-	@Getter@Setter
+
 	private String logradouro;
-	@Getter @Setter 
+
 	private String numero;
-	@Getter @Setter
-	private String uf;
-	@Getter @Setter
+
+	private Uf uf;
+
 	private String cidade;
-	@Getter @Setter
+
 	private String bairro;
-	@Getter @Setter
+
 	private String complemento;
-	@Getter @Setter
+
 	private String ptRef;
+	
+	public Endereco() {}
+
+	public Endereco(long cep, String logradouro, String numero, Uf uf, String cidade, String bairro, String complemento,
+			String ptRef) {
+		this.cep = cep;
+		this.logradouro = logradouro;
+		this.numero = numero;
+		this.uf = uf;
+		this.cidade = cidade;
+		this.bairro = bairro;
+		this.complemento = complemento;
+		this.ptRef = ptRef;
+	}
+
+	public long getCep() {
+		return cep;
+	}
+
+	public void setCep(long cep) {
+		this.cep = cep;
+	}
+
+	public String getLogradouro() {
+		return logradouro;
+	}
+
+	public void setLogradouro(String logradouro) {
+		this.logradouro = logradouro;
+	}
+
+	public String getNumero() {
+		return numero;
+	}
+
+	public void setNumero(String numero) {
+		this.numero = numero;
+	}
+
+	public Uf getUf() {
+		return uf;
+	}
+
+	public void setUf(Uf uf) {
+		this.uf = uf;
+	}
+
+	public String getCidade() {
+		return cidade;
+	}
+
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
+	}
+
+	public String getBairro() {
+		return bairro;
+	}
+
+	public void setBairro(String bairro) {
+		this.bairro = bairro;
+	}
+
+	public String getComplemento() {
+		return complemento;
+	}
+
+	public void setComplemento(String complemento) {
+		this.complemento = complemento;
+	}
+
+	public String getPtRef() {
+		return ptRef;
+	}
+
+	public void setPtRef(String ptRef) {
+		this.ptRef = ptRef;
+	}
 
 }

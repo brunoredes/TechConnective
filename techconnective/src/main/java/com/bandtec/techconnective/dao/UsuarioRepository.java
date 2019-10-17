@@ -9,12 +9,15 @@ import org.springframework.stereotype.Repository;
 import com.bandtec.techconnective.model.Usuario;
 
 @Repository
-public interface UsuarioRepository extends MongoRepository<Usuario, Integer>{
+public interface UsuarioRepository extends MongoRepository<Usuario, Long>{
 	
 	@Query("{ 'cpf' : ?0, 'senha' : ?1}")
 	public Usuario loginUsuario(String cpf, String senha);
 	
 	@Query("{'nome' : ?0}")
 	public List<Usuario> porNome(String nome);
+	
+	Usuario usuario = new Usuario();
+	
 
 }

@@ -1,13 +1,36 @@
 package com.bandtec.techconnective.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
-@NoArgsConstructor @AllArgsConstructor
 public class Contato {
-	@Getter @Setter private byte prefixo;
-	@Getter @Setter private long tel;
-	@Getter @Setter private long cel;
+	private byte prefixo;
+	private long tel;
+	private long cel;
+	
+	public Contato() {}
+	
+	public Contato(byte prefixo, long tel, long cel) {
+		this.prefixo = prefixo;
+		this.tel = tel;
+		this.cel = cel;
+	}
+	
+	public byte getPrefixo() {
+		return prefixo;
+	}
+	public void setPrefixo(byte prefixo) {
+		this.prefixo = prefixo;
+	}
+	public long getTel() {
+		return tel;
+	}
+	public void setTel(long tel) {
+		this.tel = tel;
+	}
+	public long getCel() {
+		return cel;
+	}
+	public void setCel(long cel) {
+		this.cel = cel;
+	}
+	
+	
 }

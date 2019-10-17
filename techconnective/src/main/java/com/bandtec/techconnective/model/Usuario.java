@@ -1,43 +1,35 @@
 package com.bandtec.techconnective.model;
 
-
 import java.time.LocalDate;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
-@NoArgsConstructor 
 @Document(collection = "colUser")
 public class Usuario {
-	
-	@Transient
-    public static final String SEQUENCE_NAME = "DocSequence";
-	
-	@Id
-	private long id;
 
-	@Getter private String nome;
-	@Getter private String cpf;
+	@Id
+	private String id;
+
+	private String nome;
+	private String cpf;
 	@JsonFormat(pattern = "dd/MM/yyyy")
-	@Getter private LocalDate dt_nasc;
-	//@Getter private String sobrenome;
-	@Getter @Setter private Sex sex;
-	//@Getter @Setter private String login;
-	@Getter @Setter private String senha;
-	@Getter @Setter private Endereco endereco;
-	@Getter @Setter private Contato contato;
-	@Getter @Setter private String email;
-	
-	//@Getter @Setter private List usuarioComum;
-	
-	public Usuario(String nome, String cpf, LocalDate dt_nasc, Sex sex, String senha, Endereco endereco, Contato contato, String email) {
+	private LocalDate dt_nasc;
+	// @Getter private String sobrenome;
+	private Sex sex;
+	private String senha;
+	private Endereco endereco;
+	private Contato contato;
+	private String email;
+
+	public Usuario() {
+
+	}
+
+	public Usuario(String nome, String cpf, LocalDate dt_nasc, Sex sex, String senha, Endereco endereco,
+			Contato contato, String email) {
 		this.nome = nome;
 		this.cpf = cpf;
 		this.dt_nasc = dt_nasc;
@@ -47,4 +39,73 @@ public class Usuario {
 		this.contato = contato;
 		this.email = email;
 	}
+
+	public String getId() {
+		return id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+
+	public LocalDate getDt_nasc() {
+		return dt_nasc;
+	}
+
+	public void setDt_nasc(LocalDate dt_nasc) {
+		this.dt_nasc = dt_nasc;
+	}
+
+	public Sex getSex() {
+		return sex;
+	}
+
+	public void setSex(Sex sex) {
+		this.sex = sex;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+
+	public Endereco getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
+	}
+
+	public Contato getContato() {
+		return contato;
+	}
+
+	public void setContato(Contato contato) {
+		this.contato = contato;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 }
