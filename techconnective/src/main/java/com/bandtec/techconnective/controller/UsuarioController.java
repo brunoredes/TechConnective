@@ -38,6 +38,7 @@ public class UsuarioController {
 		else return ResponseEntity.ok(usuarioPorNome);
 	}
 	
+	@CrossOrigin
 	@PostMapping("/usuario/criar")
 	public ResponseEntity<String> cadastrarUsuario(@RequestBody Usuario usuario){
 		usuarioRepository.save(usuario);
