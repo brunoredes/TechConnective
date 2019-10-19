@@ -22,14 +22,19 @@ public class Usuario {
 	private Credenciais credenciais;
 	private Endereco endereco;
 	private Contato contato;
-	private String email;
+	private Credenciais credenciais;
 
 	public Usuario() {
 
 	}
 
+<<<<<<< HEAD
+	public Usuario(String nome, String cpf, LocalDate dt_nasc, Sex sex, String senha, Endereco endereco,
+			Contato contato, Credenciais credenciais) {
+=======
 	public Usuario(String nome, String cpf, LocalDate dt_nasc, Sex sex, Credenciais credenciais, Endereco endereco,
 			Contato contato, String email) {
+>>>>>>> 9f1cb8653c7bc622e83af81f43e049eb81f1f6b3
 		this.nome = nome;
 		this.cpf = cpf;
 		this.dt_nasc = dt_nasc;
@@ -37,7 +42,7 @@ public class Usuario {
 		this.credenciais = credenciais;
 		this.endereco = endereco;
 		this.contato = contato;
-		this.email = email;
+		this.credenciais = credenciais;
 	}
 
 	public String getId() {
@@ -100,12 +105,12 @@ public class Usuario {
 		this.contato = contato;
 	}
 
-	public String getEmail() {
-		return email;
+	public Credenciais getCredenciais() {
+		return credenciais;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setCredenciais(Credenciais credenciais) {
+		this.credenciais = credenciais;
 	}
 
 }

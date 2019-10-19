@@ -1,13 +1,30 @@
 package com.bandtec.techconnective.model;
 
 public class Credenciais {
+<<<<<<< HEAD
+	private String email;
+=======
 
 	private String login;
+>>>>>>> 9f1cb8653c7bc622e83af81f43e049eb81f1f6b3
 	private String senha;
 
 	public Credenciais() {
 	}
 
+<<<<<<< HEAD
+	public Credenciais(String email, String senha) {
+		this.email = email;
+		this.senha = senha;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+=======
 	public Credenciais(String login, String senha) {
 		this.login = login;
 		this.senha = senha;
@@ -15,12 +32,19 @@ public class Credenciais {
 
 	public boolean iguais() {
 		return login.equals(senha);
+>>>>>>> 9f1cb8653c7bc622e83af81f43e049eb81f1f6b3
 	}
 
 	public String getSenha() {
 		return senha;
 	}
 
+<<<<<<< HEAD
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+
+=======
 	public String getLogin() {
 		return login;
 	}
@@ -55,4 +79,5 @@ public class Credenciais {
 			return false;
 		return true;
 	}
+>>>>>>> 9f1cb8653c7bc622e83af81f43e049eb81f1f6b3
 }
