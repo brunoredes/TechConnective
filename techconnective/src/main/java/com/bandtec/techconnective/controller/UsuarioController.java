@@ -24,8 +24,7 @@ import com.bandtec.techconnective.model.Usuario;
 public class UsuarioController {
 	
 	private UsuarioRepository usuarioRepository;
-	
-	//public UsuarioController() {}
+
 	
 	@Autowired
 	public UsuarioController(UsuarioRepository usuarioRepository) {
@@ -45,7 +44,7 @@ public class UsuarioController {
 		return ResponseEntity.ok("Sucesso");
 	}
 	
-<<<<<<< HEAD
+
 	@PutMapping("/usuario/{id}")
 	public ResponseEntity<Usuario> updateUsuario(@PathVariable("id") String id, @RequestBody Usuario usuario) {
 		System.out.println("Atualizando usuario do ID = " + id + "...");
@@ -62,7 +61,6 @@ public class UsuarioController {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 	}
-=======
-	
->>>>>>> 9f1cb8653c7bc622e83af81f43e049eb81f1f6b3
+
+
 }
