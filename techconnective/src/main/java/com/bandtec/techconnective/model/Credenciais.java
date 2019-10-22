@@ -10,7 +10,7 @@ public class Credenciais {
 	}
 
 	public Credenciais(String login, String senha) {
-		this.login = login;
+		this.login = login;//repita o email
 		this.senha = senha;
 	}
 

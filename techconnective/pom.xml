@@ -44,10 +44,33 @@
 			<artifactId>lombok</artifactId>
 			<scope>provided</scope>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.microsoft.azure/azure-webapp-maven-plugin -->
+		<dependency>
+			<groupId>com.microsoft.azure</groupId>
+			<artifactId>azure-webapp-maven-plugin</artifactId>
+			<version>1.7.0</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
 		<plugins>
+			<plugin>
+				<groupId>com.microsoft.azure</groupId>
+				<artifactId>azure-webapp-maven-plugin</artifactId>
+				<version>1.7.0</version>
+				<configuration>
+					<!-- <schemaVersion>V2</schemaVersion> -->
+					<resourceGroup>TechConnective</resourceGroup>
+					<appName>techconnective</appName>
+					<runtime>
+						<os>linux</os>
+						<javaVersion>jre8</javaVersion>
+						<webContainer>tomcat 9.0</webContainer>
+					</runtime>
+					<region>southbrazil</region>
+				</configuration>
+			</plugin>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>

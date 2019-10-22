@@ -6,12 +6,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bandtec.techconnective.dao.LoginRepository;
 import com.bandtec.techconnective.model.Credenciais;
 
 @CrossOrigin(origins = "*")
+@RequestMapping("/api")
 @RestController
 public class LoginUsuarioController {
 	
