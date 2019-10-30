@@ -10,17 +10,17 @@ public class Empresa {
 	private String nomeEmpresa;
 	private String razSoc;
 	private String cnpj;
-	private String senha;
+	private Credenciais credenciais;
 	private Endereco endereco;
 	private Contato contato;
 	
 	public Empresa(){}
 
-	public Empresa(String nomeEmpresa, String razSoc, String cnpj, String senha, Endereco endereco, Contato contato) {
+	public Empresa(String nomeEmpresa, String razSoc, String cnpj, Credenciais credenciais, Endereco endereco, Contato contato) {
 		this.nomeEmpresa = nomeEmpresa;
 		this.razSoc = razSoc;
 		this.cnpj = cnpj;
-		this.senha = senha;
+		this.credenciais = credenciais;
 		this.endereco = endereco;
 		this.contato = contato;
 	}
@@ -50,12 +50,12 @@ public class Empresa {
 		this.cnpj = cnpj;
 	}
 
-	public String getSenha() {
-		return senha;
+	public Credenciais getCredenciais() {
+		return credenciais;
 	}
 
-	public void setSenha(String senha) {
-		this.senha = senha;
+	public void setCredenciais(Credenciais credenciais) {
+		this.credenciais = credenciais;
 	}
 
 	public Endereco getEndereco() {

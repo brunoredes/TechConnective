@@ -11,8 +11,8 @@ import com.bandtec.techconnective.model.Usuario;
 @Repository
 public interface UsuarioRepository extends MongoRepository<Usuario, String>{
 	
-	@Query("{ 'cpf' : ?0, 'senha' : ?1}")
-	public Usuario loginUsuario(String cpf, String senha);
+	@Query("{ 'login' : ?0, 'senha' : ?1}")
+	public Usuario loginUsuario(String login, String senha);
 	
 	@Query("{'nome' : ?0}")
 	public List<Usuario> porNome(String nome);
