@@ -1,0 +1,17 @@
+/home/brino/Documentos/TechConnective/src/main/java/com/bandtec/techconnective/model/Ong.java
+/home/brino/Documentos/TechConnective/src/main/java/com/bandtec/techconnective/model/Uf.java
+/home/brino/Documentos/TechConnective/src/main/java/com/bandtec/techconnective/dao/EmpresaRepository.java
+/home/brino/Documentos/TechConnective/src/main/java/com/bandtec/techconnective/controller/UsuarioController.java
+/home/brino/Documentos/TechConnective/src/main/java/com/bandtec/techconnective/model/Credenciais.java
+/home/brino/Documentos/TechConnective/src/main/java/com/bandtec/techconnective/model/Empresa.java
+/home/brino/Documentos/TechConnective/src/main/java/com/bandtec/techconnective/model/Contato.java
+/home/brino/Documentos/TechConnective/src/main/java/com/bandtec/techconnective/dao/UsuarioRepository.java
+/home/brino/Documentos/TechConnective/src/main/java/com/bandtec/techconnective/model/LogUsuario.java
+/home/brino/Documentos/TechConnective/src/main/java/com/bandtec/techconnective/controller/LoginUsuarioController.java
+/home/brino/Documentos/TechConnective/src/main/java/com/bandtec/techconnective/TechconnectiveApplication.java
+/home/brino/Documentos/TechConnective/src/main/java/com/bandtec/techconnective/dao/LoginRepository.java
+/home/brino/Documentos/TechConnective/src/main/java/com/bandtec/techconnective/dao/Log.java
+/home/brino/Documentos/TechConnective/src/main/java/com/bandtec/techconnective/model/Usuario.java
+/home/brino/Documentos/TechConnective/src/main/java/com/bandtec/techconnective/model/Endereco.java
+/home/brino/Documentos/TechConnective/src/main/java/com/bandtec/techconnective/controller/EmpresaController.java
+/home/brino/Documentos/TechConnective/src/main/java/com/bandtec/techconnective/model/Sex.java
