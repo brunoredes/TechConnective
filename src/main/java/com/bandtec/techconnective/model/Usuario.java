@@ -17,18 +17,15 @@ public class Usuario {
 	private String cpf;
 	@JsonFormat(pattern = "dd/MM/yyyy")
 	private LocalDate dt_nasc;
-	// @Getter private String sobrenome;
 	private Sex sex;
 	private Credenciais credenciais;
 	private Endereco endereco;
 	private Contato contato;
 
-	public Usuario() {
-
-	}
+	public Usuario() {}
 
 	public Usuario(String nome, String cpf, LocalDate dt_nasc, Sex sex, Credenciais credenciais, Endereco endereco,
-			Contato contato, String email) {
+			Contato contato) {
 
 		this.nome = nome;
 		this.cpf = cpf;

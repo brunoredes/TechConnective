@@ -11,23 +11,19 @@ public class Ong {
 	private String nomeInst;
 	private Credenciais credenciais;
 	private String cnpj;
-	private Uf uf;
 	private Endereco endereco;
 	private Contato contato;
-	private String url;
+	//private String url;
 
 	public Ong() {
 	}
 
-	public Ong(String nomeInst, String cnpj, Credenciais credenciais, Uf uf, Endereco endereco, Contato contato,
-			String url) {
+	public Ong(String nomeInst, String cnpj, Credenciais credenciais, Endereco endereco, Contato contato) {
 		this.nomeInst = nomeInst;
 		this.cnpj = cnpj;
 		this.credenciais = credenciais;
-		this.uf = uf;
 		this.endereco = endereco;
 		this.contato = contato;
-		this.url = url;
 	}
 
 	public void setId(String id) {
@@ -58,10 +54,6 @@ public class Ong {
 		return cnpj;
 	}
 
-	public Uf getUf() {
-		return uf;
-	}
-
 	public Contato getContato() {
 		return contato;
 	}
@@ -72,10 +64,6 @@ public class Ong {
 
 	public Endereco getEndereco() {
 		return endereco;
-	}
-
-	public String getUrl() {
-		return url;
 	}
 
 }

@@ -2,7 +2,7 @@ package com.bandtec.techconnective.model;
 
 public class Endereco {
 
-	private long cep;
+	private String cep;
 
 	private String logradouro;
 
@@ -20,7 +20,7 @@ public class Endereco {
 	
 	public Endereco() {}
 
-	public Endereco(long cep, String logradouro, String numero, Uf uf, String cidade, String bairro, String complemento,
+	public Endereco(String cep, String logradouro, String numero, Uf uf, String cidade, String bairro, String complemento,
 			String ptRef) {
 		this.cep = cep;
 		this.logradouro = logradouro;
@@ -32,11 +32,11 @@ public class Endereco {
 		this.ptRef = ptRef;
 	}
 
-	public long getCep() {
+	public String getCep() {
 		return cep;
 	}
 
-	public void setCep(long cep) {
+	public void setCep(String cep) {
 		this.cep = cep;
 	}
 

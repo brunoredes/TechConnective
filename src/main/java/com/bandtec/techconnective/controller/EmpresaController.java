@@ -35,7 +35,7 @@ public class EmpresaController {
 	
 	@GetMapping("/procurar/empresa")
 	public ResponseEntity<List<Empresa>> obterPorNome(@PathVariable("nomeDaEmpresa") String nomeEmpresa) {
-		List<Empresa> empresaPorNome = empresaRepository.porNome(nomeEmpresa);
+		List<Empresa> empresaPorNome = empresaRepository.findByNomeEmpresa(nomeEmpresa);
 		if(empresaPorNome.isEmpty()) return ResponseEntity.noContent().build();
 		else return ResponseEntity.ok(empresaPorNome);
 	}

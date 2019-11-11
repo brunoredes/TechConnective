@@ -14,5 +14,5 @@ public interface EmpresaRepository extends MongoRepository<Empresa, String>{
 	public Empresa loginEmpresa(Credenciais credenciais);
 	
 	@Query("{'nomeEmpresa' : ?0}")
-	public List<Empresa> porNome(String nomeEmpresa);
+	public List<Empresa> findByNomeEmpresa(String nomeEmpresa);
 }
