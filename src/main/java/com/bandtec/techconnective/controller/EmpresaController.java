@@ -41,7 +41,7 @@ public class EmpresaController {
 		if(empresaPorNome.isEmpty()) return ResponseEntity.noContent().build();
 		else return ResponseEntity.ok(empresaPorNome);
 	}
-	
+	@CrossOrigin
 	@PostMapping("/login")
 	public ResponseEntity<String> efetuarLogin(@RequestBody Credenciais credenciais) {
 		ResponseEntity<String> resposta = ResponseEntity.ok("Sucesso");
