@@ -3,6 +3,7 @@ package com.bandtec.techconnective.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bandtec.techconnective.dao.EmpresaRepository;
+import com.bandtec.techconnective.model.Credenciais;
 import com.bandtec.techconnective.model.Empresa;
 
 @CrossOrigin(origins = "*")
@@ -38,6 +40,15 @@ public class EmpresaController {
 		List<Empresa> empresaPorNome = empresaRepository.findByNomeEmpresa(nomeEmpresa);
 		if(empresaPorNome.isEmpty()) return ResponseEntity.noContent().build();
 		else return ResponseEntity.ok(empresaPorNome);
+	}
+	
+	@PostMapping("/login")
+	public ResponseEntity<String> efetuarLogin(@RequestBody Credenciais credenciais) {
+		ResponseEntity<String> resposta = ResponseEntity.ok("Sucesso");
+		if(empresaRepository.loginEmpresa(credenciais) == null) {
+			resposta = ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Login/senha não conferem");
+		}
+		return resposta;
 	}
 	
 }
