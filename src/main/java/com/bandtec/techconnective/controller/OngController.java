@@ -3,7 +3,6 @@ package com.bandtec.techconnective.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,10 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bandtec.techconnective.dao.OngRepository;
-import com.bandtec.techconnective.model.Credenciais;
 import com.bandtec.techconnective.model.Ong;
 
-@CrossOrigin(origins = "*")
+
 @RequestMapping("/api")
 @RestController
 public class OngController {
@@ -35,6 +33,7 @@ private OngRepository ongRepository;
 		return ResponseEntity.ok("Sucesso");
 	}
 	
+	@CrossOrigin
 	@GetMapping("/procurar/ong")
 	public ResponseEntity<List<Ong>> obterPorNome(@PathVariable("nomeDaEmpresa") String nomeInst) {
 		List<Ong> ongPorNome = ongRepository.findByNomeInst(nomeInst);
@@ -43,5 +42,4 @@ private OngRepository ongRepository;
 		
 		return ongPorNome.isEmpty() ? ResponseEntity.noContent().build() : ResponseEntity.ok(ongPorNome);
 	}
-	
 }

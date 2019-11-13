@@ -35,6 +35,7 @@ public class EmpresaController {
 		return ResponseEntity.ok("Sucesso");
 	}
 	
+	@CrossOrigin
 	@GetMapping("/procurar/empresa")
 	public ResponseEntity<List<Empresa>> obterPorNome(@PathVariable("nomeDaEmpresa") String nomeEmpresa) {
 		List<Empresa> empresaPorNome = empresaRepository.findByNomeEmpresa(nomeEmpresa);

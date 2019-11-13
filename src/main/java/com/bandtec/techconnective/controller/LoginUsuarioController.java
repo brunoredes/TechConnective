@@ -22,6 +22,7 @@ public class LoginUsuarioController {
 	public LoginUsuarioController(LoginRepository loginRepository) {
 		this.loginRepository = loginRepository;
 	}
+
 	@CrossOrigin
 	@PostMapping("/login")
 	public ResponseEntity<String> efetuarLogin(@RequestBody Credenciais credenciais) {
