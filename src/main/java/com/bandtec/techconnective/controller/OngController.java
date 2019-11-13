@@ -44,12 +44,4 @@ private OngRepository ongRepository;
 		return ongPorNome.isEmpty() ? ResponseEntity.noContent().build() : ResponseEntity.ok(ongPorNome);
 	}
 	
-	@PostMapping("/login")
-	public ResponseEntity<String> efetuarLogin(@RequestBody Credenciais credenciais) {
-		ResponseEntity<String> resposta = ResponseEntity.ok("Sucesso");
-		if(ongRepository.loginOng(credenciais) == null) {
-			resposta = ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Login/senha não conferem");
-		}
-		return resposta;
-	}
 }

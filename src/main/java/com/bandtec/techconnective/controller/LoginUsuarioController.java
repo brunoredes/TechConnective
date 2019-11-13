@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.bandtec.techconnective.dao.LoginRepository;
 import com.bandtec.techconnective.model.Credenciais;
 
-@CrossOrigin(origins = "*")
 @RequestMapping("/api")
 @RestController
 public class LoginUsuarioController {
@@ -23,7 +22,7 @@ public class LoginUsuarioController {
 	public LoginUsuarioController(LoginRepository loginRepository) {
 		this.loginRepository = loginRepository;
 	}
-	
+	@CrossOrigin
 	@PostMapping("/login")
 	public ResponseEntity<String> efetuarLogin(@RequestBody Credenciais credenciais) {
 		ResponseEntity<String> resposta = ResponseEntity.ok("Sucesso");

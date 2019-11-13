@@ -42,13 +42,4 @@ public class EmpresaController {
 		else return ResponseEntity.ok(empresaPorNome);
 	}
 	
-	@PostMapping("/login")
-	public ResponseEntity<String> efetuarLogin(@RequestBody Credenciais credenciais) {
-		ResponseEntity<String> resposta = ResponseEntity.ok("Sucesso");
-		if(empresaRepository.loginEmpresa(credenciais) == null) {
-			resposta = ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Login/senha não conferem");
-		}
-		return resposta;
-	}
-	
 }
