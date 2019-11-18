@@ -34,12 +34,9 @@ private OngRepository ongRepository;
 	}
 	
 	@CrossOrigin
-	@GetMapping("/procurar/ong")
-	public ResponseEntity<List<Ong>> obterPorNome(@PathVariable("nomeDaEmpresa") String nomeInst) {
-		List<Ong> ongPorNome = ongRepository.findByNomeInst(nomeInst);
-		//if(ongPorNome.isEmpty()) return ResponseEntity.noContent().build();
-		//else return ResponseEntity.ok(ongPorNome);
-		
+	@GetMapping("/procurar/ong/{nomeDaOng}")
+	public ResponseEntity<List<Ong>> obterPorNome(@PathVariable("nomeDaOng") String nomeInst) {
+		List<Ong> ongPorNome = ongRepository.findByNomeInst(nomeInst);		
 		return ongPorNome.isEmpty() ? ResponseEntity.noContent().build() : ResponseEntity.ok(ongPorNome);
 	}
 }
