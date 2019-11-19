@@ -16,9 +16,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bandtec.techconnective.dao.UsuarioRepository;
+import com.bandtec.techconnective.model.Credenciais;
 import com.bandtec.techconnective.model.Usuario;
 
-@CrossOrigin(origins = "*")
 @RequestMapping("/api")
 @RestController
 public class UsuarioController {
@@ -44,6 +44,7 @@ public class UsuarioController {
 		usuarioRepository.save(usuario);
 		return ResponseEntity.ok("Sucesso");
 	}
+	
 	
 
 	@PutMapping("/usuario/{id}")

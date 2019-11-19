@@ -39,4 +39,11 @@ private OngRepository ongRepository;
 		List<Ong> ongPorNome = ongRepository.findByNomeInst(nomeInst);		
 		return ongPorNome.isEmpty() ? ResponseEntity.noContent().build() : ResponseEntity.ok(ongPorNome);
 	}
+	
+	@CrossOrigin
+	@GetMapping("/list")
+	public ResponseEntity<List<Ong>> list(Ong ong) {
+		List<Ong> lista = ongRepository.getAll(ong);		
+		return lista.isEmpty() ? ResponseEntity.noContent().build() : ResponseEntity.ok(lista);
+	}
 }

@@ -14,6 +14,11 @@ public interface OngRepository extends MongoRepository<Ong, String>{
 
 	public List<Ong> findByNomeInst(String nomeInst);
 	
+
 	@Query("{ 'credenciais' : ?0}")
 	public Ong loginOng(Credenciais c);
+	
+
+	@Query("{ 'nomeInst' : ?0}")
+	public List<Ong> getAll(Ong ong);
 }

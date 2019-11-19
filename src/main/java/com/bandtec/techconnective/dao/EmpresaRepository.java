@@ -4,13 +4,14 @@ import java.util.List;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import com.bandtec.techconnective.model.Credenciais;
 import com.bandtec.techconnective.model.Empresa;
-import com.bandtec.techconnective.model.Usuario;
 
 public interface EmpresaRepository extends MongoRepository<Empresa, String>{
 	
+	@CrossOrigin
 	@Query("{ 'credenciais' : ?0}")
 	public Empresa loginEmpresa(Credenciais c);
 	
