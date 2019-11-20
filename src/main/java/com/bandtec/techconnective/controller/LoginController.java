@@ -35,26 +35,26 @@ public class LoginController {
 
 	@CrossOrigin
 	@PostMapping("/login/usuario")
-	public ResponseEntity<String> efetuarLogin(@RequestBody Credenciais credenciais) {
+	public ResponseEntity<Usuario> efetuarLogin(@RequestBody Credenciais credenciais) {
 		Usuario usr = usuarioRepository.loginUsuario(credenciais);
-		return usr == null ? ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Login/senha não conferem")
-				: ResponseEntity.ok("UIA");
-
+		return usr == null ? ResponseEntity.status(HttpStatus.UNAUTHORIZED).build()
+				: ResponseEntity.ok(usr);
+		
 	}
 
 	@CrossOrigin
 	@PostMapping("/login/empresa")
-	public ResponseEntity<String> efetuaLogin(@RequestBody Credenciais credenciais) {
+	public ResponseEntity<Empresa> efetuaLogin(@RequestBody Credenciais credenciais) {
 		Empresa empresa = empresaRepository.loginEmpresa(credenciais);
-		return empresa == null ? ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Login/senha não conferem")
-				: ResponseEntity.ok("UIA");
+		return empresa == null ? ResponseEntity.status(HttpStatus.UNAUTHORIZED).build()
+				: ResponseEntity.ok(empresa);
 	}
 
 	@CrossOrigin
 	@PostMapping("/login/ong")
-	public ResponseEntity<String> fazerLogin(@RequestBody Credenciais credenciais) {
+	public ResponseEntity<Ong> fazerLogin(@RequestBody Credenciais credenciais) {
 		Ong ong = ongRepository.loginOng(credenciais);
-		return ong == null ? ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Login/senha não conferem")
-				: ResponseEntity.ok("UIA");
+		return ong == null ? ResponseEntity.status(HttpStatus.UNAUTHORIZED).build()
+				: ResponseEntity.ok(ong);
 	}
 }
