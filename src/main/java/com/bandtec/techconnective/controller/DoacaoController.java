@@ -23,12 +23,12 @@ public class DoacaoController {
 		this.doacaoRepository = doacaoRepository;
 	}
 	
-	@CrossOrigin
-	@GetMapping("/doacao")
-	public ResponseEntity<List<Doacao>> list(@RequestBody Doacao doacao){
-		List<Doacao> lista = doacaoRepository.getAll(doacao);
-		if(lista.isEmpty()) return ResponseEntity.noContent().build();
-		else return ResponseEntity.ok(lista);
-	}
+//	@CrossOrigin
+//	@GetMapping("/doacao")
+//	public ResponseEntity<List<Doacao>> list(@RequestBody Doacao doacao){
+//		List<Doacao> lista = doacaoRepository.getAll(doacao);
+//		if(lista.isEmpty()) return ResponseEntity.noContent().build();
+//		else return ResponseEntity.ok(lista);
+//	}
 
 }
