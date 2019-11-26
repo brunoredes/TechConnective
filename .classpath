@@ -28,9 +28,5 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-<<<<<<< HEAD
-	<classpathentry exported="true" kind="con" path="GROOVY_DSL_SUPPORT"/>
-=======
->>>>>>> 689c317151566ff242c0c8f0d926749528f1d313
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
