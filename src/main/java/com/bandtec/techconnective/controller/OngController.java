@@ -1,5 +1,6 @@
 package com.bandtec.techconnective.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,9 +42,9 @@ private OngRepository ongRepository;
 	}
 	
 	@CrossOrigin
-	@GetMapping("/list")
-	public ResponseEntity<List<Ong>> list(Ong ong) {
-		List<Ong> lista = ongRepository.getAll(ong);		
+	@GetMapping("/ong/list")
+	public ResponseEntity<ArrayList<Ong>> list(Ong ong) {
+		ArrayList<Ong> lista = ongRepository.findAll();
 		return lista.isEmpty() ? ResponseEntity.noContent().build() : ResponseEntity.ok(lista);
 	}
 }

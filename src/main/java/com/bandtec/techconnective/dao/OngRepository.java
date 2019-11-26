@@ -1,5 +1,6 @@
 package com.bandtec.techconnective.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
@@ -19,6 +20,6 @@ public interface OngRepository extends MongoRepository<Ong, String>{
 	public Ong loginOng(Credenciais c);
 	
 
-	@Query("{ 'nomeInst' : ?0}")
-	public List<Ong> getAll(Ong ong);
+	
+	public ArrayList<Ong> findAll();
 }
