@@ -17,18 +17,18 @@ import com.bandtec.techconnective.model.Doacao;
 @RestController
 public class DoacaoController {
 	private DoacaoRepository doacaoRepository;
-	
+
 	@Autowired
 	public DoacaoController(DoacaoRepository doacaoRepository) {
 		this.doacaoRepository = doacaoRepository;
 	}
-	
+
 	@CrossOrigin
 	@GetMapping("/doacao")
-	public ResponseEntity<List<Doacao>> list(@RequestBody Doacao doacao){
+	public ResponseEntity<List<Doacao>> list(@RequestBody Doacao doacao) {
 		List<Doacao> lista = doacaoRepository.getAll(doacao);
-		if(lista.isEmpty()) return ResponseEntity.noContent().build();
-		else return ResponseEntity.ok(lista);
+		return lista.isEmpty() ? ResponseEntity.noContent().build() : ResponseEntity.ok(lista);
+
 	}
 
 }
