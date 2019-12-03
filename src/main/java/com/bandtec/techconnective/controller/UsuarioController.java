@@ -17,33 +17,36 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.bandtec.techconnective.dao.UsuarioRepository;
 import com.bandtec.techconnective.model.Usuario;
+import com.bandtec.techconnective.service.CadastroService;
 
 @RequestMapping("/api")
 @RestController
 public class UsuarioController {
-	
-	private UsuarioRepository usuarioRepository;
 
-	
+	private UsuarioRepository usuarioRepository;
+	private CadastroService cadastro;
+
 	@Autowired
-	public UsuarioController(UsuarioRepository usuarioRepository) {
+	public UsuarioController(UsuarioRepository usuarioRepository,CadastroService cadastro) {
 		this.usuarioRepository = usuarioRepository;
+		this.cadastro = cadastro;
 	}
-	
+
 	@GetMapping("/usuario")
 	public ResponseEntity<List<Usuario>> obterPorNome(@PathVariable("nomeDoUsuario") String nome) {
 		List<Usuario> usuarioPorNome = usuarioRepository.porNome(nome);
-		if(usuarioPorNome.isEmpty()) return ResponseEntity.noContent().build();
-		else return ResponseEntity.ok(usuarioPorNome);
+		if (usuarioPorNome.isEmpty())
+			return ResponseEntity.noContent().build();
+		else
+			return ResponseEntity.ok(usuarioPorNome);
 	}
-	
+
 	@CrossOrigin
 	@PostMapping("/usuario/criar")
 	public ResponseEntity<String> cadastrarUsuario(@RequestBody Usuario usuario){
-		usuarioRepository.save(usuario);
-		return ResponseEntity.ok("Sucesso");
+		return ResponseEntity.ok(cadastro.cadastroUsuario(usuario));
 	}
-	
+
 	@PutMapping("/usuario/{id}")
 	public ResponseEntity<Usuario> updateUsuario(@PathVariable("id") String id, @RequestBody Usuario usuario) {
 		System.out.println("Atualizando usuario do ID = " + id + "...");
@@ -60,6 +63,5 @@ public class UsuarioController {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 	}
-
 
 }
