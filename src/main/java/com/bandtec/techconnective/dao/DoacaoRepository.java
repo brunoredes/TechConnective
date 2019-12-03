@@ -10,7 +10,5 @@ import com.bandtec.techconnective.model.Doacao;
 
 public interface DoacaoRepository extends MongoRepository<Doacao, String>{
 
-	@CrossOrigin
-	@Query("{'doacao' : ?0}")
-	public List<Doacao> getAll(Doacao doacao);
+	List<Doacao> findAll();
 }
