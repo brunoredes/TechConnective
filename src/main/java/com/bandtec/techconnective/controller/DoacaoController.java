@@ -42,5 +42,10 @@ public class DoacaoController {
 		return ResponseEntity.ok("Sucesso");
 	}
 	
+	public ResponseEntity<List<Doacao>> list(@RequestBody Doacao doacao) {
+		List<Doacao> lista = doacaoRepository.findAll();
+		return lista.isEmpty() ? ResponseEntity.noContent().build() : ResponseEntity.ok(lista);
+
+	}
 
 }

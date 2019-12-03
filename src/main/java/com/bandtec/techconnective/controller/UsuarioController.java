@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bandtec.techconnective.dao.UsuarioRepository;
-import com.bandtec.techconnective.model.Credenciais;
 import com.bandtec.techconnective.model.Usuario;
 
 @RequestMapping("/api")
