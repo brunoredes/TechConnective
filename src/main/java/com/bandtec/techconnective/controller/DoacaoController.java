@@ -34,15 +34,17 @@ public class DoacaoController {
 		else
 			return ResponseEntity.ok(lista);
 	}
-	
+
 	@CrossOrigin
 	@PostMapping("/doacao/criar")
-	public ResponseEntity<String> cadastrarDoacao(@RequestBody Doacao doacao){
+	public ResponseEntity<String> cadastrarDoacao(@RequestBody Doacao doacao) {
 		doacaoRepository.save(doacao);
 		return ResponseEntity.ok("Sucesso");
 	}
-	
-	public ResponseEntity<List<Doacao>> list(@RequestBody Doacao doacao) {
+
+	@CrossOrigin
+	@GetMapping("/doacao/list")
+	public ResponseEntity<List<Doacao>> list(Doacao doacao) {
 		List<Doacao> lista = doacaoRepository.findAll();
 		return lista.isEmpty() ? ResponseEntity.noContent().build() : ResponseEntity.ok(lista);
 

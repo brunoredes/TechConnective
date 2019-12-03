@@ -16,35 +16,34 @@ import org.springframework.web.bind.annotation.RestController;
 import com.bandtec.techconnective.dao.OngRepository;
 import com.bandtec.techconnective.model.Ong;
 
-
 @RequestMapping("/api")
 @RestController
 public class OngController {
-private OngRepository ongRepository;
-	
+	private OngRepository ongRepository;
+
 	@Autowired
 	public OngController(OngRepository ongRepository) {
 		this.ongRepository = ongRepository;
 	}
-	
+
 	@CrossOrigin
 	@PostMapping("/ong/criar")
-	public ResponseEntity<String> cadastrarOng(@RequestBody Ong ong){
+	public ResponseEntity<String> cadastrarOng(@RequestBody Ong ong) {
 		ongRepository.save(ong);
 		return ResponseEntity.ok("Sucesso");
 	}
-	
+
 	@CrossOrigin
 	@GetMapping("/procurar/ong/{nomeDaOng}")
 	public ResponseEntity<List<Ong>> obterPorNome(@PathVariable("nomeDaOng") String nomeInst) {
-		List<Ong> ongPorNome = ongRepository.findByNomeInst(nomeInst);		
+		List<Ong> ongPorNome = ongRepository.findByNomeInst(nomeInst);
 		return ongPorNome.isEmpty() ? ResponseEntity.noContent().build() : ResponseEntity.ok(ongPorNome);
 	}
-	
+
 	@CrossOrigin
 	@GetMapping("/ong/list")
-	public ResponseEntity<ArrayList<Ong>> list(Ong ong) {
-		ArrayList<Ong> lista = ongRepository.findAll();
+	public ResponseEntity<List<Ong>> list(Ong ong) {
+		List<Ong> lista = ongRepository.findAll();
 		return lista.isEmpty() ? ResponseEntity.noContent().build() : ResponseEntity.ok(lista);
 	}
 }
