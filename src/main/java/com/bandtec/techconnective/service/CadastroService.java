@@ -13,7 +13,7 @@ public class CadastroService {
 
 	public CadastroService() {
 		this.rest = new RestTemplate();
-		this.url = "localhost:8081";
+		this.url = "http://micrologg.herokuapp.com/";
 	}
 	// metodo
 

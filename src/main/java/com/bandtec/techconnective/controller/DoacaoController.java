@@ -23,7 +23,7 @@ public class DoacaoController {
 	private DoacaoRepository doacaoRepository;
 
 	@Autowired
-	private DoacaoServico service; 
+	private DoacaoServico service;
 	
 	@Autowired
 	public DoacaoController(DoacaoRepository doacaoRepository) {
