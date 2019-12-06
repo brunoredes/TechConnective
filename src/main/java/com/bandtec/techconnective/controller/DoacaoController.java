@@ -38,6 +38,13 @@ public class DoacaoController {
 		doacaoRepository.save(doacao);
 		return ResponseEntity.ok("Sucesso");
 	}
+	
+	@CrossOrigin
+	@GetMapping("/doacao/list")
+	public ResponseEntity<List<Doacao>> list(Doacao doacao){
+		List<Doacao> lista = doacaoRepository.findAll();
+		return ResponseEntity.ok().body(lista);
+	}
 
 
 	@CrossOrigin
