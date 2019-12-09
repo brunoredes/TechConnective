@@ -44,7 +44,8 @@ public class UsuarioController {
 	@CrossOrigin
 	@PostMapping("/usuario/criar")
 	public ResponseEntity<String> cadastrarUsuario(@RequestBody Usuario usuario){
-		return ResponseEntity.ok(cadastro.cadastroUsuario(usuario));
+		usuarioRepository.save(usuario);
+		return ResponseEntity.ok("Sucesso");
 	}
 
 	@PutMapping("/usuario/{id}")
