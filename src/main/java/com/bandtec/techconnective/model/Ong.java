@@ -13,7 +13,6 @@ public class Ong {
 	private String cnpj;
 	private Endereco endereco;
 	private Contato contato;
-	//private String url;
 
 	public Ong() {
 	}

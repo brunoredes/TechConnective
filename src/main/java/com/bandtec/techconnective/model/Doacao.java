@@ -30,7 +30,7 @@ public class Doacao {
 		this.validade = validade;
 		this.comentario = comentario;
 	}
-
+	public String getId() {return id;}
 	public String getTipo() {
 		return tipo;
 	}

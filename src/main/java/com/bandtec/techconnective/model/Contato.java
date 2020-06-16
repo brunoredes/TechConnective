@@ -2,32 +2,32 @@ package com.bandtec.techconnective.model;
 
 public class Contato {
 
-	private long tel;
-	private long cel;
+	private String tel;
+	private String cel;
 	private String email;
 
 	public Contato() {
 	}
 
-	public Contato(long tel, long cel, String email) {
+	public Contato(String tel, String cel, String email) {
 		this.tel = tel;
 		this.cel = cel;
 		this.email = email;
 	}
 
-	public long getTel() {
+	public String getTel() {
 		return tel;
 	}
 
-	public void setTel(long tel) {
+	public void setTel(String tel) {
 		this.tel = tel;
 	}
 
-	public long getCel() {
+	public String getCel() {
 		return cel;
 	}
 
-	public void setCel(long cel) {
+	public void setCel(String cel) {
 		this.cel = cel;
 	}
 

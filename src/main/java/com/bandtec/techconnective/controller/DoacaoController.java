@@ -1,17 +1,12 @@
 package com.bandtec.techconnective.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.bandtec.techconnective.dao.DoacaoRepository;
 import com.bandtec.techconnective.model.Doacao;
@@ -30,8 +25,6 @@ public class DoacaoController {
 		this.doacaoRepository = doacaoRepository;
 	}
 
-
-
 	@CrossOrigin
 	@PostMapping("/doacao/criar")
 	public ResponseEntity<String> cadastrarDoacao(@RequestBody Doacao doacao) {
@@ -46,6 +39,12 @@ public class DoacaoController {
 		return ResponseEntity.ok().body(lista);
 	}
 
+	@GetMapping("/doacao/{id}")
+	public ResponseEntity<Optional<Doacao>> listById (@PathVariable("id") String id) {
+		Optional<Doacao> porId = doacaoRepository.findById(id);
+		return ResponseEntity.ok(porId);
+	}
+
 
 	@CrossOrigin
 	@GetMapping("/doacao/page")
@@ -58,6 +57,5 @@ public class DoacaoController {
 		
 		return ResponseEntity.ok().body(list);
 	}
-			
 
 }
