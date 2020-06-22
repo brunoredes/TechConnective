@@ -57,4 +57,11 @@ public class Evento {
         return nomeOng;
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 }

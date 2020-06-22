@@ -2,7 +2,9 @@ package com.bandtec.techconnective.controller;
 
 import com.bandtec.techconnective.dao.EventoRepository;
 import com.bandtec.techconnective.model.Evento;
+import com.bandtec.techconnective.servicos.EventoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,12 +16,14 @@ public class EventoController {
     @Autowired
     private EventoRepository eventoRepository;
 
+    @Autowired
+    private EventoService eventoService;
 
     @CrossOrigin
     @PostMapping("/evento")
-    public ResponseEntity<String> createEvent(@RequestBody Evento evento) {
-        eventoRepository.save(evento);
-        return ResponseEntity.ok().build();
+    @ResponseStatus(HttpStatus.CREATED)
+    public Evento createEvent(@RequestBody Evento evento) {
+        return eventoService.salvar(evento);
     }
 
     @CrossOrigin

@@ -34,14 +34,14 @@ public class OngController {
 
 	@CrossOrigin
 	@GetMapping("/procurar/ong/{nomeDaOng}")
-	public ResponseEntity<List<Ong>> obterPorNome(@PathVariable("nomeDaOng") String nomeInst) {
-		List<Ong> ongPorNome = ongRepository.findByNomeInst(nomeInst);
+	public ResponseEntity<List<Ong>> obterPorNome(@PathVariable("nomeDaOng") String nomeDaOng) {
+		List<Ong> ongPorNome = ongRepository.findByNomeInst(nomeDaOng);
 		return ongPorNome.isEmpty() ? ResponseEntity.noContent().build() : ResponseEntity.ok(ongPorNome);
 	}
 
 	@CrossOrigin
 	@GetMapping("/ong/list")
-	public ResponseEntity<List<Ong>> list(Ong ong) {
+	public ResponseEntity<List<Ong>> list() {
 		List<Ong> lista = ongRepository.findAll();
 		return lista.isEmpty() ? ResponseEntity.noContent().build() : ResponseEntity.ok(lista);
 	}
