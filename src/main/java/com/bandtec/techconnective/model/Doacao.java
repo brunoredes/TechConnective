@@ -1,12 +1,11 @@
 package com.bandtec.techconnective.model;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.Date;
-
 import org.bson.types.Binary;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.time.LocalDateTime;
+import java.util.Date;
 
 @Document(collection = "colDoacao")
 public class Doacao {
@@ -18,6 +17,7 @@ public class Doacao {
     private String nomeOng;
     private String descricao;
     private Integer qnt;
+    private Endereco endereco;
     private Date validade;
     private String comentario;
     private LocalDateTime hora;
@@ -26,7 +26,7 @@ public class Doacao {
     public Doacao() {
     }
 
-    public Doacao(String tipo, String nomeOng, String descricao, Integer qnt, Date validade,
+    public Doacao(String tipo, String nomeOng, String descricao, Endereco endereco, Integer qnt, Date validade,
                   String comentario, LocalDateTime hora, Binary image) {
         this.tipo = tipo;
         this.nomeOng = nomeOng;
@@ -36,6 +36,7 @@ public class Doacao {
         this.comentario = comentario;
         this.hora = hora;
         this.image = image;
+        this.endereco = endereco;
     }
 
     public String getId() {
@@ -98,12 +99,19 @@ public class Doacao {
         this.hora = hora;
     }
 
-	public Binary getImage() {
-		return image;
-	}
+    public Binary getImage() {
+        return image;
+    }
 
-	public void setImage(Binary image) {
-		this.image = image;
-	}
+    public void setImage(Binary image) {
+        this.image = image;
+    }
 
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
 }
