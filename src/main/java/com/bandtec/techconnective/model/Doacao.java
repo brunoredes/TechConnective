@@ -15,6 +15,7 @@ public class Doacao {
 
     private String tipo;
     private String nomeOng;
+    private String nomeUser;
     private String descricao;
     private Integer qnt;
     private Endereco endereco;
@@ -27,7 +28,7 @@ public class Doacao {
     }
 
     public Doacao(String tipo, String nomeOng, String descricao, Endereco endereco, Integer qnt, Date validade,
-                  String comentario, LocalDateTime hora, Binary image) {
+                  String comentario, LocalDateTime hora, Binary image, String nomeUser) {
         this.tipo = tipo;
         this.nomeOng = nomeOng;
         this.descricao = descricao;
@@ -37,6 +38,7 @@ public class Doacao {
         this.hora = hora;
         this.image = image;
         this.endereco = endereco;
+        this.nomeUser = nomeUser;
     }
 
     public String getId() {
@@ -113,5 +115,13 @@ public class Doacao {
 
     public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
+    }
+
+    public String getNomeUser() {
+        return nomeUser;
+    }
+
+    public void setNomeUser(String nomeUser) {
+        this.nomeUser = nomeUser;
     }
 }
