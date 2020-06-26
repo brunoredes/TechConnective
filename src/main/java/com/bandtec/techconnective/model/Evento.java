@@ -15,14 +15,18 @@ public class Evento {
     private String descricao;
     private Date data;
     private String nomeOng;
+    private String dtInicio;
+    private String dtFim;
 
     public Evento() {}
 
-    public Evento(Endereco endereco, String descricao, Date data, String nomeOng) {
+    public Evento(Endereco endereco, String descricao, Date data, String nomeOng, String dtInicio, String dtFim) {
         this.endereco = endereco;
         this.descricao = descricao;
         this.data = data;
         this.nomeOng = nomeOng;
+        this.dtInicio = dtInicio;
+        this.dtFim = dtFim;
     }
 
     public Endereco getEndereco() {
@@ -63,5 +67,21 @@ public class Evento {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getDtInicio() {
+        return dtInicio;
+    }
+
+    public void setDtInicio(String dtInicio) {
+        this.dtInicio = dtInicio;
+    }
+
+    public String getDtFim() {
+        return dtFim;
+    }
+
+    public void setDtFim(String dtFim) {
+        this.dtFim = dtFim;
     }
 }
