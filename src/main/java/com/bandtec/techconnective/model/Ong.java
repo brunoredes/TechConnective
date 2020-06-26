@@ -13,16 +13,19 @@ public class Ong {
 	private String cnpj;
 	private Endereco endereco;
 	private Contato contato;
+	private Geolocalizacao geolocalizacao;
 
 	public Ong() {
 	}
 
-	public Ong(String nomeInst, String cnpj, Credenciais credenciais, Endereco endereco, Contato contato) {
+	public Ong(String nomeInst, String cnpj, Credenciais credenciais,
+			   Endereco endereco, Contato contato, Geolocalizacao geolocalizacao) {
 		this.nomeInst = nomeInst;
 		this.cnpj = cnpj;
 		this.credenciais = credenciais;
 		this.endereco = endereco;
 		this.contato = contato;
+		this.geolocalizacao = geolocalizacao;
 	}
 
 	public void setId(String id) {
@@ -65,4 +68,19 @@ public class Ong {
 		return endereco;
 	}
 
+	public String getId() {
+		return id;
+	}
+
+	public void setNomeInst(String nomeInst) {
+		this.nomeInst = nomeInst;
+	}
+
+	public Geolocalizacao getGeolocalizacao() {
+		return geolocalizacao;
+	}
+
+	public void setGeolocalizacao(Geolocalizacao geolocalizacao) {
+		this.geolocalizacao = geolocalizacao;
+	}
 }
